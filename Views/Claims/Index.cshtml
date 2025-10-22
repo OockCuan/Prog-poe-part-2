@@ -1,0 +1,30 @@
+﻿@using ProgPOE.Controllers
+
+<div class="container mt-4">
+    <a class="btn btn-secondary text-white" asp-controller="Claims" asp-action="Create">New Claim</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Claim Number</th>
+                <th>Status</th>
+                <th>Documentation</th>
+                <th>Total overtime</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>12345</td>
+                <td class="text-warning">Pending</td>
+                <td>Overtime.docx</td>
+                <td>15 hours</td>
+            </tr>
+            <tr>
+                <td>12344</td>
+                <td class="text-success">Accepted</td>
+                <td>Overtime.docx</td>
+                <td>15 hours</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
