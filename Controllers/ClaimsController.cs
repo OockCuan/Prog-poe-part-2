@@ -12,16 +12,18 @@ namespace ProgPOE.Controllers
     public class ClaimsController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IWebHostEnvironment _env;
 
-        public ClaimsController(AppDbContext context)
+        public ClaimsController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
-        
+
         public async Task<IActionResult> Index()
         {
-            var claims = await _context.Claim.ToListAsync();
+            var claims = await _context.Claims.ToListAsync();
             return View(claims);
         }
 
@@ -30,15 +32,16 @@ namespace ProgPOE.Controllers
         public IActionResult Create()
         {
             return View();
-           
         }
 
-        
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Models.Claim claim, IFormFile uploadFile)
+
         {
-            if (!ModelState.IsValid)
-                return View(claim);
+
+
 
 
             if (uploadFile != null && uploadFile.Length > 0)
@@ -56,9 +59,17 @@ namespace ProgPOE.Controllers
 
                 claim.FileName = uploadFile.FileName;
                 claim.FilePath = "/uploads/" + fileName;
+                
+                
+
+
             }
 
-            _context.Claim.Add(claim);
+            claim.Status = "Pending";
+            claim.Documentation = claim.FileName;
+            if (!ModelState.IsValid)
+                return View(claim);
+            _context.Claims.Add(claim);
             await _context.SaveChangesAsync();
 
 

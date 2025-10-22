@@ -1,8 +1,8 @@
 ﻿@model ProgPOE.Models.Claim
 
 <div class="container mt-5">
-    <form asp-action="Create" method="post">
-        
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
 
         <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
@@ -25,19 +25,17 @@
         </div>
 
         <div class="mb-4">
-            <label asp-for="Documentation" class="form-label">Document name</label>
-            <input asp-for="Documentation" class="form-control" placeholder="e.g. OvertimeForm1.pdf" />
-            <span asp-validation-for="Documentation" class="text-danger"></span>
-        </div>
-
-
-        <div class="mb-4">
             <label asp-for="Notes" class="form-label">Notes (optional)</label>
             <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
             <span asp-validation-for="Notes" class="text-danger"></span>
         </div>
 
         
+        <div class="mb-3">
+            <label class="form-label">Upload supporting docs</label>
+            <input class="form-control" type="file" name="uploadFile" />
+            
+        </div>
 
         <button type="submit" class="btn btn-primary me-2">Submit</button>
         <a class="btn btn-secondary" asp-controller="Claims" asp-action="Index">Back</a>
