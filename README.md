@@ -1,4 +1,11 @@
 # Prog-poe-part-2
+Github Repo Link 
+
+https://github.com/OockCuan/Prog-poe-part-2 
+
+YouTube video Showing application 
+
+https://youtu.be/rCNFrlfL8cs 
 References
 
 
