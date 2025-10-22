@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using ProgPOE.Models;
 
 namespace ProgPOE.Data
 {
@@ -9,6 +9,6 @@ namespace ProgPOE.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
 
-        public DbSet<Claim> Claims { get; set; }
+        public DbSet<Claim> Claim { get; set; }
     }
 }

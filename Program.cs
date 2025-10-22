@@ -1,3 +1,6 @@
+using ProgPOE.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace ProgPOE
 {
     public class Program
@@ -8,8 +11,13 @@ namespace ProgPOE
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            var dbPath = Path.Combine(builder.Environment.ContentRootPath, "claims.db");
+            builder.Services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlite($"Data Source={dbPath}"));
             var app = builder.Build();
+            //builder.Services.AddDbContext<AppDbContext>(options =>
+            //    options.UseSqlite("Data Source=claims.db"));
+
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
