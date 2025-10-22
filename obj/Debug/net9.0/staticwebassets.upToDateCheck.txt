@@ -65,6 +65,8 @@ wwwroot\uploads\062ce76c-2ccd-4a2c-a2fd-cc22875410d6.jpg
 wwwroot\uploads\0b903c2d-0d7a-40dc-a919-a8cb0075cb07.jpg
 wwwroot\uploads\4e741cbe-661d-440d-a275-f690420e5796.jpg
 wwwroot\uploads\7d74283e-7a2b-456f-83b5-3644eb0c4a7b.jpg
+wwwroot\uploads\8f01c397-a12e-498d-badd-11ccddda3121.jpg
+wwwroot\uploads\9f29b3e3-2b07-4f86-8e68-47cc7a7a07f7.jpg
 C:\Users\lab_services_student\Desktop\Github\Prog-poe-part-2\wwwroot\css\site.css
 C:\Users\lab_services_student\Desktop\Github\Prog-poe-part-2\wwwroot\favicon.ico
 C:\Users\lab_services_student\Desktop\Github\Prog-poe-part-2\wwwroot\js\site.js

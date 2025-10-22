@@ -30,9 +30,21 @@
             <tbody>
                 @foreach (var claim in Model)
                 {
+
                     <tr>
                         <td>@claim.ClaimId</td>
-                        <td>@claim.Status</td>
+                        @if (claim.Status == "Pending" || claim.Status == "Forwarded")
+                        {
+                            <td class="text-warning">@claim.Status</td>
+                        }
+                        else if (claim.Status == "Accepted")
+                        {
+                            <td class="text-success">@claim.Status</td>
+                        }
+                        else
+                        {
+                            <td class="text-danger">@claim.Status</td>
+                        }
                         <td>@claim.Documentation</td>
                         <td>@claim.Hours</td>
                         <td>@claim.Lecturer</td>

@@ -1,4 +1,6 @@
-﻿<div class="mb-4">
+﻿@using ProgPOE.Controllers
+
+@* <div class="mb-4">
     <h2 class="text-secondary">Project Coordinator</h2>
 </div>
 
@@ -10,6 +12,7 @@
             <th>Lecturer</th>
             <th>Documentation</th>
             <th>Total overtime</th>
+            <th>Overtime due</th>
             <th></th>
         </tr>
     </thead>
@@ -19,6 +22,7 @@
             <td>Kevin</td>
             <td>Overtime.docx</td>
             <td>15 hours</td>
+            <td>$200</td>
             <td>
                 <button class="btn btn-outline-primary btn-close-white text- mb-3">Accept</button>
                 <a class="btn btn-danger mb-lg-3" asp-controller="Coordinator" asp-action="Reject">Reject</a>
@@ -27,4 +31,68 @@
 
     </tbody>
 </table>
+</div> *@
+
+
+<div class="mb-4 d-flex justify-content-between align-items-center">
+    <h2 class="text-secondary mb-0">Project Coordinator</h2>
+    @if (TempData["Message"] != null)
+    {
+        <span class="badge bg-info text-dark">@TempData["Message"]</span>
+    }
 </div>
+
+@if (Model == null)
+{
+    <div class="alert alert-info text-center">
+        No claims
+    </div>
+}
+else
+{
+    <table class="table text-secondary align-middle">
+        <thead>
+            <tr>
+                <th>Claim Number</th>
+                <th>Lecturer</th>
+                <th>Documentation</th>
+                <th>Total Overtime (Hours)</th>
+                <th>Overtime Due</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var claim in Model)
+        {
+                if (claim.Status == "Pending")
+                {
+                    <tr>
+                        <td>@claim.ClaimId</td>
+                        <td>@claim.Lecturer</td>
+                        <td>
+                            @claim.Documentation
+                        </td>
+                        <td>@claim.Hours</td>
+                        <td>@((decimal)claim.Hours * claim.Rate).ToString("C")</td>
+
+                        <td class="d-flex gap-2">
+                            <form asp-controller="Coordinator" asp-action="Accept" method="post" class="m-0">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="id" value="@claim.ClaimId" />
+                                <button type="submit" class="btn btn-outline-primary">Accept</button>
+                            </form>
+
+                            <form asp-controller="Coordinator" asp-action="Reject" method="post" class="m-0">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="id" value="@claim.ClaimId" />
+                                <button type="submit" class="btn btn-danger">Reject</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+                
+        }
+        </tbody>
+    </table>
+}
+
