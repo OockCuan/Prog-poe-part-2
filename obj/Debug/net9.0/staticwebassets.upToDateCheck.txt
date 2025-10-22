@@ -63,9 +63,12 @@ wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
 wwwroot\uploads\062ce76c-2ccd-4a2c-a2fd-cc22875410d6.jpg
 wwwroot\uploads\0b903c2d-0d7a-40dc-a919-a8cb0075cb07.jpg
+wwwroot\uploads\1f07549d-76c5-4842-be8a-d73d9bdeb69a.jpg
 wwwroot\uploads\4e741cbe-661d-440d-a275-f690420e5796.jpg
+wwwroot\uploads\75ca88e8-dde0-49df-9255-8ab61bee81e5.jpg
 wwwroot\uploads\7d74283e-7a2b-456f-83b5-3644eb0c4a7b.jpg
 wwwroot\uploads\8f01c397-a12e-498d-badd-11ccddda3121.jpg
+wwwroot\uploads\9ae72812-8eff-498f-ab19-903c27ce0c6d.jpg
 wwwroot\uploads\9f29b3e3-2b07-4f86-8e68-47cc7a7a07f7.jpg
 C:\Users\lab_services_student\Desktop\Github\Prog-poe-part-2\wwwroot\css\site.css
 C:\Users\lab_services_student\Desktop\Github\Prog-poe-part-2\wwwroot\favicon.ico

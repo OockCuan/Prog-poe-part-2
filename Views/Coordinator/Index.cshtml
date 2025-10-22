@@ -73,7 +73,7 @@ else
                             @claim.Documentation
                         </td>
                         <td>@claim.Hours</td>
-                        <td>@((decimal)claim.Hours * claim.Rate).ToString("C")</td>
+                        <td>@((decimal)claim.Hours * claim.Rate)</td>
 
                         <td class="d-flex gap-2">
                             <form asp-controller="Coordinator" asp-action="Accept" method="post" class="m-0">

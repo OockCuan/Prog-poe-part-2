@@ -15,8 +15,7 @@ namespace ProgPOE
             builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseSqlite($"Data Source={dbPath}"));
             var app = builder.Build();
-            //builder.Services.AddDbContext<AppDbContext>(options =>
-            //    options.UseSqlite("Data Source=claims.db"));
+            
 
 
             // Configure the HTTP request pipeline.
